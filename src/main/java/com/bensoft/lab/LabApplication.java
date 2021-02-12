@@ -44,11 +44,7 @@ public class LabApplication {
 
             // save a few buddies
             repo2.save(new BuddyInfo("Steve", 123456789, "1 2nd Street"));
-            /*repo2.save(new Customer("Chloe", "O'Brian"));
-            repo2.save(new Customer("Kim", "Bauer"));
-            repo2.save(new Customer("David", "Palmer"));
-            repo2.save(new Customer("Michelle", "Dessler"));
-            */
+
             // fetch all buddies
             log.info("Buddies found with findAll():");
             log.info("-------------------------------");
