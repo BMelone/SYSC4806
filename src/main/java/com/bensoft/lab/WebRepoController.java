@@ -12,7 +12,6 @@ import java.util.List;
 public class WebRepoController {
     private final AddressBookRepository repo1;
 
-
     @Autowired
     public WebRepoController(AddressBookRepository repo1) {
         this.repo1 = repo1;

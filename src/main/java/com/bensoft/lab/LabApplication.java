@@ -6,6 +6,7 @@ import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.Profile;
 
 @SpringBootApplication
 public class LabApplication {
@@ -17,7 +18,8 @@ public class LabApplication {
         SpringApplication.run(LabApplication.class, args);
     }
 
-    /*@Bean
+    @Bean
+    @Profile("!test")
     public CommandLineRunner demo(AddressBookRepository repo1, BuddyInfoRepository repo2) {
         return (args) -> {
             // save an address book
@@ -66,5 +68,5 @@ public class LabApplication {
             repo2.findByName("Steve").forEach(steve -> log.info(steve.toString()));
             log.info("");
         };
-    }*/
+    }
 }
