@@ -17,7 +17,7 @@ public class LabApplication {
         SpringApplication.run(LabApplication.class, args);
     }
 
-    @Bean
+    /*@Bean
     public CommandLineRunner demo(AddressBookRepository repo1, BuddyInfoRepository repo2) {
         return (args) -> {
             // save an address book
@@ -66,5 +66,5 @@ public class LabApplication {
             repo2.findByName("Steve").forEach(steve -> log.info(steve.toString()));
             log.info("");
         };
-    }
+    }*/
 }
