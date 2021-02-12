@@ -9,10 +9,10 @@
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
     <groupId>com.benSoft</groupId>
-    <artifactId>lab4</artifactId>
+    <artifactId>lab5</artifactId>
     <version>0.0.1-SNAPSHOT</version>
-    <name>lab4</name>
-    <description>SYSC 4806 Lab 4</description>
+    <name>lab5</name>
+    <description>SYSC 4806 Lab 5</description>
     <dependencies>
         <dependency>
             <groupId>org.springframework.boot</groupId>
