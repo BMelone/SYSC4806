@@ -13,19 +13,11 @@ import java.util.Collection;
 @Entity
 public class AddressBook {
 
-    Collection<BuddyInfo> buddyInfos;
+    @OneToMany(mappedBy = "addressBook", cascade = {CascadeType.ALL}, fetch = FetchType.EAGER)
+    private Collection<BuddyInfo> buddyInfos;
+    @Id
+    @GeneratedValue
     private Long id;
-
-    public static void main(String[] args) {
-        System.out.println("Address Book");
-        AddressBook book = new AddressBook();
-        BuddyInfo buddy = new BuddyInfo("Steve", 987654321, "2 1st Street");
-        BuddyInfo buddy2 = new BuddyInfo("Bob", 123456789, "1 2nd Street");
-        book.addBuddy(buddy);
-        book.addBuddy(buddy2);
-        System.out.println(book);
-        book.removeBuddy(buddy);
-    }
 
     public AddressBook() {
         buddyInfos = new ArrayList<>();
@@ -41,7 +33,6 @@ public class AddressBook {
         return getBuddyInfos().add(buddy);
     }
 
-    @OneToMany(mappedBy = "addressBook", cascade = CascadeType.ALL, fetch = FetchType.EAGER)
     public Collection<BuddyInfo> getBuddyInfos() {
         return buddyInfos;
     }
@@ -58,8 +49,6 @@ public class AddressBook {
         getBuddyInfos().clear();
     }
 
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
     public Long getId() {
         return id;
     }

@@ -26,8 +26,14 @@ public class LabApplication {
             AddressBook test = new AddressBook();
             BuddyInfo gary = new BuddyInfo("Gary", 123456789, "1 2nd Street");
             test.addBuddy(gary);
+            test.addBuddy(new BuddyInfo("Stewart", 654789132, "Little Drive"));
             repo1.save(test);
             log.info(test.toString());
+
+            // add another address book
+            AddressBook test2 = new AddressBook();
+            test2.addBuddy(new BuddyInfo("Tony", 789456123, "Tiger Road"));
+            repo1.save(test2);
 
             // fetch all buddies
             log.info("Address Books found with findAll():");
@@ -39,7 +45,7 @@ public class LabApplication {
 
             // fetch an individual address book by ID
             AddressBook ab = repo1.findById(1L);
-            log.info("AddressBook found with findById(1L):");
+            log.info("AddressBook found with findById(2L):");
             log.info("--------------------------------");
             log.info(ab.toString());
             log.info("");
@@ -56,8 +62,8 @@ public class LabApplication {
             log.info("");
 
             // fetch an individual buddy by ID
-            BuddyInfo buddy = repo2.findById(1L);
-            log.info("Buddy found with findById(1L):");
+            BuddyInfo buddy = repo2.findById(2L);
+            log.info("Buddy found with findById(2L):");
             log.info("--------------------------------");
             log.info(buddy.toString());
             log.info("");

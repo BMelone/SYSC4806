@@ -1,0 +1,14 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://thymeleaf.org" lang="en-us">
+<head>
+    <title>Add Buddy to Address Book</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+</head>
+<body>
+<p th:text="'A new buddy has been added to address book ' + ${id}"></p>
+<p th:text="'Name: ' + ${buddy.getName()}"></p>
+<p th:text="'Phone Number: ' + ${buddy.getPhoneNumber()}"></p>
+<p th:text="'Address: ' + ${buddy.getAddress()}"></p>
+<a th:href="@{/addressBooks/{path}/buddyInfos(path=${id})}">Go Back</a>
+</body>
+</html>

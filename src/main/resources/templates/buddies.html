@@ -8,7 +8,7 @@
 <h2>List of buddies</h2>
 <table class="table">
     <thead>
-    <tr>
+    <tr th:unless="${buddies.isEmpty()}">
         <th>Name</th>
         <th>Phone Number</th>
         <th>Address</th>
@@ -18,12 +18,20 @@
     <tr th:if="${buddies.isEmpty()}">
         <td colspan="2">You have no friends</td>
     </tr>
-    <tr th:each="buddy : ${buddies}">
+    <tr th:unless="${buddies.isEmpty()}" th:each="buddy : ${buddies}">
         <td><span th:text="${buddy.getName()}"> Name </span></td>
         <td><span th:text="${buddy.getPhoneNumber()}"> Phone Number </span></td>
         <td><span th:text="${buddy.getAddress()}"> Address </span></td>
     </tr>
     </tbody>
 </table>
+
+<h2 th:text="'Add new buddy to address book ' + ${id}"></h2>
+<form action="#" th:action="@{/addressBooks/{path}/buddyInfos(path=${id})}" th:object="${buddy}" method="post">
+    <p>Name: <input type="text" th:field="*{name}" /></p>
+    <p>Phone Number: <input type="number" th:field="*{phoneNumber}" /></p>
+    <p>Address: <input type="text" th:field="*{address}" /></p>
+    <p><input type="submit" value="Submit" /></p>
+</form>
 </body>
 </html>

@@ -15,7 +15,11 @@ public class BuddyInfo {
     private long phoneNumber;
     private String address;
     private int age;
+
+    @Id
+    @GeneratedValue
     private Long id;
+    @ManyToOne
     private AddressBook addressBook;
 
     public static void main(String[] args) {
@@ -74,8 +78,6 @@ public class BuddyInfo {
         age = newAge;
     }
 
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
     public Long getId() {
         return id;
     }
@@ -84,7 +86,6 @@ public class BuddyInfo {
         id = newId;
     }
 
-    @ManyToOne
     public AddressBook getAddressBook() { return addressBook; }
 
     public void setAddressBook(AddressBook addressBook) { this.addressBook = addressBook; }
