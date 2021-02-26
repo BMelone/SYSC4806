@@ -1,14 +1,14 @@
 package com.bensoft.lab;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Controller;
+import org.springframework.data.rest.webmvc.RepositoryRestController;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.ModelAndView;
 
 import java.util.List;
 
-@Controller
+@RepositoryRestController
 public class WebRepoController {
     private final AddressBookRepository repo1;
 
